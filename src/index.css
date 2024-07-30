@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body { 
-    font-family: sans-serif;
-}
+body {
+    font-family: 'Onest Variable', sans-serif;
+  }

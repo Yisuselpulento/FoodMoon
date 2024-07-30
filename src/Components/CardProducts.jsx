@@ -7,25 +7,28 @@ const CardProducts = ({ product }) => {
   return (
     <>
       {categorieActual?.id === categoriaId &&
-        <div className='p-3 rounded flex flex-col items-center bg-yellow-200 shadow-lg border-[1px] border-yellow-300 w-80'>
+        <div className='p-1 rounded flex flex-col items-center bg-gray-100 shadow-lg border-[1px] h-[600px] md:w-[240px] md:h-[480px] md:bg-opacity-20'>
           <img
             src={`./images/${imagen}.webp`}
             alt={`Imagen platillo ${nombre}`}
-            className='w-60'
+            className='rounded-lg p-1'
+
           />
-          <div>
-            <h3 className='h-[70px] w-[270px] text-2xl font-bold '>{nombre}</h3>
-            <p className='font-black text-4xl text-yellow-500'>{precio}</p>
-            <button
-              type='button'
-              className='bg-gradient-to-r from-pink-400 to-red-500 hover:bg-blue-500 text-white w-full mt-5 p-3 uppercase font-bold'
-              onClick={() => {
-              /*   handleSetProducto(producto)
+          <div className='px-2 flex flex-col justify-between h-full w-full'>
+            <h3 className=' max-w-[230px] text-lg font-extrabold mt-2'>{nombre}</h3>
+            <div>
+              <p className='font-black text-3xl text-yellow-500'>${precio}</p>
+              <button
+                type='button'
+                className='bg-blue-500 hover:bg-blue-600 text-white w-full p-3 uppercase font-bold my-2'
+                onClick={() => {
+                  /*   handleSetProducto(producto)
                 handleChangeModal() */
-              }}
-            >
-              Agregar
-            </button>
+                }}
+              >
+                Agregar
+              </button>
+            </div>
           </div>
         </div>}
     </>

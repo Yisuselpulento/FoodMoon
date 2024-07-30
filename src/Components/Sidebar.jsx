@@ -3,15 +3,14 @@ import useProducts from '../hooks/useProducts'
 const Sidebar = ({ handleMenuActive }) => {
   const { categories, handleClickCategoria, categorieActual } = useProducts()
 
-  console.log(categories)
   return (
     <div>
-      <img src='/images/logoFootMon.webp' className='hidden md:flex w-[120px] p-5' alt='logo principal de la pagina' />
-      <nav className='mt-16 md:mt-0'>
+      <img src='/images/MonssterLogoLight.webp' className='hidden md:flex p-2 m-3 bg-hoverPrimary rounded-full w-[50px] h-[50px]' alt='logo principal de la pagina' />
+      <nav className='mt-16 md:mt-10'>
         {categories.map(cat => (
           <button
             key={cat.id}
-            className={`${categorieActual?.id === cat.id ? 'bg-pink-400' : ''} p-5 bg-pink-300 hover:bg-pink-400 flex items-center gap-3 w-full text-white font-bold text-xl border-t-[1px]  border-pink-400`}
+            className={`${categorieActual?.id === cat.id ? 'bg-yellow-500' : ''} p-5 bg-primary hover:bg-hoverPrimary flex items-center gap-3 md:w-[290px] w-full text-white font-bold text-xl border-t-[1px]  border-hoverPrimary `}
             onClick={() => {
               handleClickCategoria(cat.id)
               handleMenuActive()
@@ -19,7 +18,7 @@ const Sidebar = ({ handleMenuActive }) => {
           >
             <img
               src={`/images/icono_${cat.icono}.svg`}
-              className='md:w-[70px] w-[30px]'
+              className='md:w-[50px] w-[30px]'
               alt={`imagen de ${cat.nombre}`}
             />
             {cat.nombre}

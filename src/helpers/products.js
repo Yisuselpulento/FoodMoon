@@ -354,8 +354,3 @@ export const product = [
     categoriaId: 3
   }
 ]
-
-const productos = product.map((prod, index) => {
-  prod.index = index
-  return prod
-})

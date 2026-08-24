@@ -27,7 +27,7 @@ const Layout = () => {
         </aside>
         <div className='flex flex-col gap-5 w-full md:p-5 p-2 mt-16 md:mt-0'>
           <header><Navbar /></header>
-          <main className=' min-h-screen md:min-h-[700px] w-ful flex flex-col md:gap-2 gap-4 md:px-20 md:py-10'><Outlet /></main>
+          <main className=' min-h-screen md:min-h-[700px] w-full flex flex-col md:gap-2 gap-4 md:px-20 md:py-10'><Outlet /></main>
         </div>
       </div>
       <footer className='flex items-center justify-center h-[100px] bg-primary font-bold'>Made by<span className='text-gray-900'> Monsster </span></footer>

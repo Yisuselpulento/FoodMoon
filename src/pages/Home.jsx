@@ -1,10 +1,13 @@
-import React from 'react'
 import useProducts from '../hooks/useProducts'
 import { product } from '../helpers/products.js'
 import CardProducts from '../Components/CardProducts.jsx'
 
 const Home = () => {
   const { categorieActual } = useProducts()
+
+  const productosFiltrados = product.filter(
+    prod => prod.categoriaId === categorieActual?.id
+  )
 
   return (
     <>
@@ -14,13 +17,12 @@ const Home = () => {
       </p>
       <div className='flex flex-wrap gap-8 w-full'>
 
-        {product.map((product, i) => (
+        {productosFiltrados.map((prod) => (
           <CardProducts
-            key={i}
-            product={product}
+            key={prod.imagen}
+            product={prod}
           />
-        )
-        )}
+        ))}
 
       </div>
 

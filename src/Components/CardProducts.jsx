@@ -1,4 +1,7 @@
+import useProducts from '../hooks/useProducts'
+
 const CardProducts = ({ product }) => {
+  const { handleSetProducto, handleClickModal } = useProducts()
   const { nombre, imagen, precio } = product
   return (
     <div className='p-1 rounded flex flex-col items-center bg-gray-100 shadow-lg border-[1px] h-[600px] md:w-[240px] md:h-[480px] md:bg-opacity-20'>
@@ -15,6 +18,10 @@ const CardProducts = ({ product }) => {
           <button
             type='button'
             className='bg-blue-500 hover:bg-blue-600 text-white w-full p-3 uppercase font-bold my-2'
+            onClick={() => {
+              handleSetProducto(product)
+              handleClickModal()
+            }}
           >
             Agregar
           </button>

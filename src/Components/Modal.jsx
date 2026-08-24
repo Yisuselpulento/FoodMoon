@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import useProducts from '../hooks/useProducts'
+import { productImg } from '../helpers/productImg'
 
 const Modal = () => {
   const { producto, handleClickModal, handleAgregarPedido } = useProducts()
@@ -39,7 +40,7 @@ const Modal = () => {
         >&times;</button>
 
         <img
-          src={`/images/${producto.imagen}.webp`}
+          src={productImg(producto.imagen)}
           alt={producto.nombre}
           className='rounded-lg w-full h-56 object-cover'
         />

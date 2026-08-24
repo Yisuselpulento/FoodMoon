@@ -1,11 +1,10 @@
 import useProducts from '../hooks/useProducts'
-import { product } from '../helpers/products.js'
 import CardProducts from '../Components/CardProducts.jsx'
 
 const Home = () => {
-  const { categorieActual } = useProducts()
+  const { categorieActual, productos } = useProducts()
 
-  const productosFiltrados = product.filter(
+  const productosFiltrados = productos.filter(
     prod => prod.categoriaId === categorieActual?.id
   )
 
@@ -19,7 +18,7 @@ const Home = () => {
 
         {productosFiltrados.map((prod) => (
           <CardProducts
-            key={prod.imagen}
+            key={prod.id}
             product={prod}
           />
         ))}

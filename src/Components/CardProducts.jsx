@@ -1,4 +1,5 @@
 import useProducts from '../hooks/useProducts'
+import { productImg } from '../helpers/productImg'
 
 const CardProducts = ({ product }) => {
   const { handleSetProducto, handleClickModal } = useProducts()
@@ -6,9 +7,9 @@ const CardProducts = ({ product }) => {
   return (
     <div className='p-1 rounded flex flex-col items-center bg-gray-100 shadow-lg border-[1px] h-[600px] md:w-[240px] md:h-[480px] md:bg-opacity-20'>
       <img
-        src={`/images/${imagen}.webp`}
+        src={productImg(imagen)}
         alt={`Imagen platillo ${nombre}`}
-        className='rounded-lg p-1'
+        className='rounded-lg p-1 w-full h-48 object-cover'
         loading='lazy'
       />
       <div className='px-2 flex flex-col justify-between h-full w-full'>

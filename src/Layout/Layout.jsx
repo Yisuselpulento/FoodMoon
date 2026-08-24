@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, Link } from 'react-router-dom'
 import Sidebar from '../Components/Sidebar'
 import Navbar from '../Components/Navbar'
 import Modal from '../Components/Modal'
@@ -39,7 +39,10 @@ const Layout = () => {
         </div>
       </div>
       {modal && <Modal />}
-      <footer className='flex items-center justify-center h-[100px] bg-primary font-bold'>Made by<span className='text-gray-900'> Monsster </span></footer>
+      <footer className='flex items-center justify-center gap-4 h-[100px] bg-primary font-bold'>
+        <span>Made by<span className='text-gray-900'> Monsster </span></span>
+        <Link to='/admin' className='text-gray-900 underline hover:text-white text-sm'>Admin</Link>
+      </footer>
 
     </div>
   )

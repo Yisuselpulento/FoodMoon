@@ -5,6 +5,12 @@ import Summary from './pages/Summary'
 import { Total } from './pages/Total'
 import NotFound from './pages/NotFound'
 import { ProductsProvider } from './context/ProductsContext'
+import AdminLogin from './pages/admin/AdminLogin'
+import AdminLayout from './Layout/AdminLayout'
+import AdminRoute from './Components/AdminRoute'
+import AdminDashboard from './pages/admin/AdminDashboard'
+import AdminProductos from './pages/admin/AdminProductos'
+import AdminPedidos from './pages/admin/AdminPedidos'
 
 export default function App () {
   return (
@@ -16,6 +22,21 @@ export default function App () {
             <Route path='summary' element={<Summary />} />
             <Route path='total' element={<Total />} />
             <Route path='*' element={<NotFound />} />
+          </Route>
+
+          {/* Admin */}
+          <Route path='/admin/login' element={<AdminLogin />} />
+          <Route
+            path='/admin'
+            element={
+              <AdminRoute>
+                <AdminLayout />
+              </AdminRoute>
+            }
+          >
+            <Route index element={<AdminDashboard />} />
+            <Route path='productos' element={<AdminProductos />} />
+            <Route path='pedidos' element={<AdminPedidos />} />
           </Route>
         </Routes>
       </ProductsProvider>

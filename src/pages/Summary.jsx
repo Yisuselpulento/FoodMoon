@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import useProducts from '../hooks/useProducts'
+import { productImg } from '../helpers/productImg'
 
 const Summary = () => {
   const { pedido, total, handleEditarCantidad, handleEliminarProducto } = useProducts()
@@ -15,9 +16,9 @@ const Summary = () => {
         : (
           <div className='flex flex-col gap-4 mt-4 max-w-[800px]'>
             {pedido.map(prod => (
-              <div key={prod.imagen} className='flex gap-4 items-center bg-white/70 border rounded-lg p-3 shadow'>
+              <div key={prod.id} className='flex gap-4 items-center bg-white/70 border rounded-lg p-3 shadow'>
                 <img
-                  src={`/images/${prod.imagen}.webp`}
+                  src={productImg(prod.imagen)}
                   alt={prod.nombre}
                   className='w-24 h-24 object-cover rounded'
                   loading='lazy'
@@ -30,11 +31,11 @@ const Summary = () => {
                 </div>
                 <div className='flex flex-col gap-2'>
                   <button
-                    onClick={() => handleEditarCantidad(prod.imagen)}
+                    onClick={() => handleEditarCantidad(prod.id)}
                     className='bg-primary hover:bg-hoverPrimary text-white px-3 py-1 rounded font-bold text-sm'
                   >Editar</button>
                   <button
-                    onClick={() => handleEliminarProducto(prod.imagen)}
+                    onClick={() => handleEliminarProducto(prod.id)}
                     className='bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded font-bold text-sm'
                   >Eliminar</button>
                 </div>
